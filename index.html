@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Schlemper Streetwear</title>
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Schlemper">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.png">
+<style>
+:root{--b:#000;--w:#fff;--g9:#141414;--g8:#1f1f1f;--g7:#2e2e2e;--g5:#737373;--g4:#a3a3a3;--g2:#e5e5e5;--g1:#f3f3f3;--red:#e5484d;--ok:#2fbf71;
+--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.4;min-height:100vh}
+body.dark{--fg:#fff;--bg:#000;--mut:var(--g4);--line:var(--g7);--soft:var(--g9);background:#000;color:#fff}
+body.light{--fg:#000;--bg:#fff;--mut:var(--g5);--line:var(--g2);--soft:var(--g1);background:#fff;color:#000}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit;color:inherit}
+.mut{color:var(--mut)}
+.wrap{padding:calc(var(--sat) + 14px) 24px 120px;max-width:560px;margin:0 auto}
+.disp{font-weight:900;text-transform:uppercase;letter-spacing:-.5px;line-height:.98;margin:0}
+.h-xl{font-size:clamp(44px,15vw,64px)}
+.h-l{font-size:34px}.h-m{font-size:26px}
+.top img{height:12px;width:auto}
+/* hero */
+.hero{position:relative;min-height:460px;display:flex;align-items:flex-end;overflow:hidden;margin:0 -24px}
+.hero .wm{position:absolute;right:-70px;top:10px;width:380px;opacity:.09}
+.hero-in{position:relative;padding:0 24px;animation:rise .7s ease both}
+.hero-in .disp{margin:10px 0 24px}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero-in{animation:none}}
+/* buttons / chips / fields */
+.btn{display:flex;align-items:center;justify-content:center;width:100%;height:52px;padding:0 20px;border:1.5px solid var(--fg);background:var(--fg);color:var(--bg);font-weight:800;font-size:15px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:transform .09s}
+.btn:active{transform:scale(.98)}
+.btn.out{background:transparent;color:var(--fg)}
+.btn[disabled]{opacity:.4}
+.btn.sm{height:40px;width:auto;font-size:13px}
+.stack>*+*{margin-top:12px}
+.row{display:flex;gap:12px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.scroll{display:flex;gap:8px;overflow-x:auto;padding:0 24px;margin:0 -24px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.chip{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border:1.5px solid var(--line);background:transparent;font-weight:700;font-size:14px;white-space:nowrap;cursor:pointer;flex:none}
+.chip.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip[disabled]{opacity:.35}
+.sw{width:14px;height:14px;border-radius:50%;border:1px solid var(--g5);flex:none}
+label.f{display:block;margin-bottom:14px;font-size:13px;font-weight:600;color:var(--mut)}
+.in{display:block;width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);background:var(--soft);color:var(--fg);font-size:16px;border-radius:0;-webkit-appearance:none}
+textarea.in{min-height:90px;resize:vertical}
+.lbl{font-size:13px;font-weight:600;color:var(--mut);margin:18px 0 8px}
+/* cards */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hscroll{display:flex;gap:12px;overflow-x:auto;margin:0 -24px;padding:0 24px;scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
+.hscroll .card{width:210px;flex:none}
+.card{display:block;transition:transform .09s}
+.card:active{transform:scale(.97)}
+.ph{position:relative;aspect-ratio:4/5;background:var(--soft);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph img.ghost{width:64px;height:auto;object-fit:contain;filter:brightness(.5);opacity:.5}
+body.light .ph img.ghost{filter:none;opacity:.12;filter:invert(1)}
+.badge{position:absolute;left:8px;top:8px;background:#000;color:#fff;font-size:12px;font-weight:800;padding:4px 8px}
+.badge.w{background:#fff;color:#000}
+.cn{font-weight:800;margin-top:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cp{font-size:14px;margin:2px 0 14px}
+/* blocks */
+.block{border-top:1px solid var(--line);padding:22px 0}
+.block h3{margin:0 0 8px;font-size:14px;color:var(--mut);font-weight:700}
+.block p{margin:0;font-size:17px;line-height:1.5;white-space:pre-line}
+.empty{text-align:center;padding:40px 16px}
+.empty img{width:56px;margin:0 auto 16px;opacity:.25}
+body.light .empty img{filter:invert(1);opacity:.15}
+.empty b{font-size:18px;display:block}
+.stat{background:var(--g9);padding:16px;flex:1}
+.stat small{color:var(--g4);display:block;margin-bottom:6px;font-size:13px}
+.stat b{font-size:22px;font-weight:900}
+/* tabbar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;background:#000;border-top:1px solid var(--g8);display:flex;padding-bottom:var(--sab);z-index:10}
+.tabbar a{flex:1;text-align:center;padding:18px 0;font-weight:800;font-size:13px;letter-spacing:.5px;color:var(--g5)}
+.tabbar a.on{color:#fff}
+.tabbar.hide{display:none}
+/* product */
+.pimg{position:relative;margin:calc(var(--sat)*-1 - 14px) -24px 0;aspect-ratio:5/6;background:var(--g1);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.pimg img.ghost{width:110px;height:auto;object-fit:contain;opacity:.12;filter:invert(1)}
+.pimg .back{position:absolute;left:16px;top:calc(var(--sat) + 10px);background:#fff;color:#000;padding:0 14px;height:38px;display:flex;align-items:center;font-weight:800}
+.pimg .sides{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.pimg .chip{background:#fff;color:#000;border-color:#fff}.pimg .chip.on{background:#000;color:#fff;border-color:#000}
+.note{background:var(--g1);padding:18px;margin-top:28px}
+/* admin */
+.bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.bar a{font-weight:800;color:var(--g4)}
+.item{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--g8)}
+.thumb{width:72px;height:90px;background:var(--g9);flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb img.ghost{width:30px;height:auto;opacity:.3;object-fit:contain}
+.lnk{background:none;border:0;padding:0;font-weight:800;cursor:pointer}
+.red{color:var(--red)}
+.var{background:var(--g9);padding:14px;margin-bottom:12px}
+.photo{flex:1;text-align:center;color:var(--g4);font-size:14px}
+.photo div{aspect-ratio:4/5;background:var(--g9);border:1px solid var(--g7);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:6px;cursor:pointer}
+.photo img{width:100%;height:100%;object-fit:cover}
+.sw-t{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.sw-t input{width:50px;height:30px;accent-color:#2fbf71}
+.salebar{position:fixed;left:0;right:0;bottom:0;background:var(--g9);padding:18px 24px calc(var(--sab) + 16px);z-index:11}
+.salebar .in{max-width:560px}
+.qty{display:flex;align-items:center}
+.qty button{width:40px;height:40px;border:1.5px solid #fff;background:transparent;color:#fff;font-size:20px;font-weight:800}
+.qty button.p{background:#fff;color:#000}
+.qty span{width:32px;text-align:center;font-weight:800}
+.toast{position:fixed;left:50%;top:calc(var(--sat) + 12px);transform:translateX(-50%);background:#fff;color:#000;padding:12px 18px;font-weight:800;z-index:50;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.spin{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--fg);border-radius:50%;animation:s .8s linear infinite;margin:40vh auto 0}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body class="dark">
+<main id="app"></main>
+<nav id="tabbar" class="tabbar">
+  <a href="#/" data-t="home">Início</a>
+  <a href="#/catalogo" data-t="catalogo">Catálogo</a>
+  <a href="#/loja" data-t="loja">Nossa loja</a>
+</nav>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
