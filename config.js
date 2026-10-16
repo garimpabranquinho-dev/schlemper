@@ -1,7 +1,4 @@
-// Preencha depois de criar o projeto no Supabase (Project Settings > API).
-// Use SOMENTE a chave "anon / publishable". NUNCA cole a "service_role" aqui.
-// Deixando vazio, o app abre em MODO DEMONSTRAÇÃO (produtos fictícios).
 window.SCHLEMPER_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: ""
-};
+  SUPABASE_URL: "https://camgvkvidurskbyhhudu.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhbWd2a3ZpZHVyc2tieWhodWR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwMjUxMjUsImV4cCI6MjEwNzYwMTEyNX0.zsZ4J5l-LPZHG2Tml8TQnjbc_0r7FBgFwoW9y9EZQsk"
+    };
